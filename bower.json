@@ -1,0 +1,35 @@
+{
+  "name": "Reactie",
+  "version": "0.0.1",
+  "homepage": "https://github.com/danjavia/Reactie",
+  "authors": [
+    "Danjavia <danjavia.iconshock@gmail.com>"
+  ],
+  "description": "Starter kit ready to use for creating apps with ReactJS & Routie.js",
+  "main": "index.html",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "Music",
+    "musiko"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower-components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "lesshat": "~3.0.2",
+    "Materialize": "materialize#~0.97.3",
+    "routie": "~0.3.2"
+  }
+}

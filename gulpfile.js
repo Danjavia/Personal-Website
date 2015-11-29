@@ -50,8 +50,22 @@ gulp.task( 'concat-js', function() {
         .pipe( gulp.dest( './' ) );
 });
 
+gulp.task( 'concat-js-app', function() {
+	return gulp.src([ 
+			'./assets/js/components/content.js',
+			'./assets/js/components/social.js',
+			'./assets/js/components/footer.js',
+			'./assets/js/components/presentation.js',
+			'./assets/js/home.js',
+			'./assets/js/app.js'
+		])
+        .pipe( gconcat( './assets/js/scripts.js' ) )
+        // .pipe( uglify() )
+        .pipe( gulp.dest( './' ) );
+});
+
 gulp.task( 'watch', function() {
     gulp.watch( './assets/less/*/*.less', [ 'less' ]);
 })
 
-gulp.task( 'default', [ 'less', 'minify', 'concat-js', 'webserver', 'watch' ]);
+gulp.task( 'default', [ 'less', 'minify', 'concat-js', 'concat-js-app', 'webserver', 'watch' ]);

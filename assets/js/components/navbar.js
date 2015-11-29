@@ -23,34 +23,13 @@ var Navbar = React.createClass({
 
 	render: function () {
 
-		var styles = {
-			logo: {
-				marginLeft: 50
-			},
-
-			hover: {
-				marginLeft: 500
-			}
-		}
-
 		return (
-			<nav>
-			    <div className="nav-wrapper">
-			      	<a href="#" className="brand-logo" onMouseOver={this.mouseOver} onMouseLeave={this.mouseLeave} style={ ! this.state.hovered ? styles.logo : styles.hover }>{this.props.brand}</a>
-			      	
-			      	<ul id="nav-mobile" className="right hide-on-med-and-down">
-			      	  	<li><a href="/#/portfolio">Portfolio</a></li>
-			      	  	<li><a href="/#/contact">Contact</a></li>
-			      	  	<li><a href="/#/blog">Blog</a></li>
-			      	</ul>
-
-			      	<ul className="side-nav" id="mobile-demo">
-        				<li><a href="/#/portfolio">Portfolio</a></li>
-        				<li><a href="/#/contact">Contact</a></li>
-        				<li><a href="/#/blog">Blog</a></li>
-      				</ul>
-			    </div>
-			</nav>
+			<div className="valign-wrapper info">
+				<div className="valign info__content">
+					<h1>Living In {this.props.code}</h1>
+	  				<h5>{this.props.brand}</h5>
+				</div>
+			</div>
 		);
 	}
 });

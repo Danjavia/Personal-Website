@@ -3,6 +3,7 @@ var gulp = require( 'gulp' ),
 	minifyCss = require( 'gulp-minify-css' ),
 	less = require( 'gulp-less' );
 	gconcat = require( 'gulp-concat' );
+	concatCss = require( 'gulp-concat-css' );
 	uglify = require( 'gulp-uglify' );
 
 gulp.task( 'webserver', function() {
@@ -21,7 +22,16 @@ gulp.task( 'less', function () {
     	.pipe( connect.reload() );
 });
 
-gulp.task( 'minify', function() {
+gulp.task( 'concat-css', function() {
+	return gulp.src([ 
+			'./bower-components/Materialize/dist/css/materialize.css'
+		])
+        .pipe( concatCss( './assets/css/dist.css' ) )
+		.pipe( minifyCss({compatibility: 'ie8'}) )
+        .pipe( gulp.dest( './' ) );
+});
+
+gulp.task( 'minify', [ 'concat-css' ], function() {
 	return gulp.src( './assets/css/*.css' )
 		.pipe(minifyCss({compatibility: 'ie8'}))
 		.pipe( gulp.dest( './assets/css/' ));
@@ -40,16 +50,8 @@ gulp.task( 'concat-js', function() {
         .pipe( gulp.dest( './' ) );
 });
 
-gulp.task( 'concat-css', function() {
-	return gulp.src([ 
-			'./bower-components/Materialize/dist/css/materialize.min.css', 
-		])
-        .pipe( gconcat( './assets/css/dist.css' ) )
-        .pipe( gulp.dest( './' ) );
-});
-
 gulp.task( 'watch', function() {
     gulp.watch( './assets/less/*/*.less', [ 'less' ]);
 })
 
-gulp.task( 'default', [ 'less', 'concat-css', 'minify', 'concat-js', 'webserver', 'watch' ]);
+gulp.task( 'default', [ 'less', 'minify', 'concat-js', 'webserver', 'watch' ]);

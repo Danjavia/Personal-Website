@@ -10,7 +10,8 @@ var Home = React.createClass({
 	render: function () {
 		return (
 			<div className="home">
-				<Navbar brand="Danjavia"/>
+				<Navbar code="</Codeland>" brand="Danny Viasus - Developer"/>
+				<Presentation/>
 			</div>
 		);
 	}

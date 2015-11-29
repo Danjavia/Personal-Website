@@ -4,19 +4,39 @@
 var Navbar = React.createClass({
 
 	getInitialState: function () {
-		return {};
+		return {
+			hovered: false
+		};
+	},
+
+	mouseOver : function ( e ) {
+		this.setState({
+			hovered: true
+		});
+	},
+
+	mouseLeave : function ( e ) {
+		this.setState({
+			hovered: false
+		});
 	},
 
 	render: function () {
 
 		var styles = {
-			
+			logo: {
+				marginLeft: 50
+			},
+
+			hover: {
+				marginLeft: 500
+			}
 		}
 
 		return (
 			<nav>
 			    <div className="nav-wrapper">
-			      	<a href="#" className="brand-logo">Danjavia</a>
+			      	<a href="#" className="brand-logo" onMouseOver={this.mouseOver} onMouseLeave={this.mouseLeave} style={ ! this.state.hovered ? styles.logo : styles.hover }>{this.props.brand}</a>
 			      	
 			      	<ul id="nav-mobile" className="right hide-on-med-and-down">
 			      	  	<li><a href="/#/portfolio">Portfolio</a></li>

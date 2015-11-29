@@ -10,7 +10,7 @@ var Home = React.createClass({
 	render: function () {
 		return (
 			<div className="home">
-				<Navbar/>
+				<Navbar brand="Danjavia"/>
 			</div>
 		);
 	}

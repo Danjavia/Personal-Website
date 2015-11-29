@@ -3,12 +3,6 @@
 // Home component
 var Presentation = React.createClass({
 
-	getInitialState: function () {
-		return {
-			hovered: false
-		};
-	},
-
 	componentDidMount: function () {
 		BG.init();
 	},

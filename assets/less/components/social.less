@@ -1,0 +1,24 @@
+.social {
+	margin-top: 30px;
+
+	&__icon {
+		width: 70px;
+		box-sizing: border-box;
+		border-radius: 50%;
+		border: 2px solid @dark;
+		margin: 25px;
+		padding: 15px 20px 13px;
+		font-size: 35px;
+		color: @dark;
+		cursor: pointer;
+		.transition( all .4s ease-out );
+
+		&:hover,
+		&:active {
+			background: @dark;
+			border-color: light;
+			color: @light;
+			.transition( all .4s ease-out );
+		}
+	}
+}

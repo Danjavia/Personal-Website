@@ -1,25 +1,7 @@
 'use strict';
 
 // Home component
-var Navbar = React.createClass({
-
-	getInitialState: function () {
-		return {
-			hovered: false
-		};
-	},
-
-	mouseOver : function ( e ) {
-		this.setState({
-			hovered: true
-		});
-	},
-
-	mouseLeave : function ( e ) {
-		this.setState({
-			hovered: false
-		});
-	},
+var Content = React.createClass({
 
 	render: function () {
 
@@ -28,6 +10,7 @@ var Navbar = React.createClass({
 				<div className="valign info__content">
 					<h1>Living In {this.props.code}</h1>
 	  				<h5>{this.props.brand}</h5>
+					<Social/>
 				</div>
 			</div>
 		);
@@ -35,4 +18,4 @@ var Navbar = React.createClass({
 });
 
 // Export component
-window.Navbar = Navbar;
+window.Content = Content;

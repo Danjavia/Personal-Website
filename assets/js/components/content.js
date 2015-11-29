@@ -9,8 +9,8 @@ var Content = React.createClass({
 			<div className="valign-wrapper info">
 				<div className="valign info__content">
 					<h1>Living In {this.props.code}</h1>
-	  				<h5>{this.props.brand}</h5>
 					<Social/>
+	  				<h5>{this.props.brand}</h5>
 				</div>
 			</div>
 		);
